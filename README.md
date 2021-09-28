@@ -25,6 +25,8 @@ The experiment comprises 3 conditions presented in the following order.
 1) Fixations: The fixation cross will jump to various screen locations.
 2) Smooth pursuit: The fixation cross will move smoothly at various speeds on a random-walk trajectory with defined directional sampling.
 3) Free viewing of images (recommended only if camera-based eye tracking is available).
+ 
+![calibration script](https://youtu.be/Wp-3PdlZ1tc)
 
 At the top of the hierarchy is the script "Start_deepMReye_calib.m". It contains the screen settings (e.g. resolution, display size etc.) as well the task settings (e.g. how many fixation locations should be tested, how many images would you like to show etc.). These settings are then forwarded to "deepMReye_calib.m", which does the main work.
 
