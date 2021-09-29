@@ -1,4 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![NatNeuro Paper](https://img.shields.io/badge/DOI-10.XXXX%2FsXXXXX--XXX--XXXX--X-blue)](https://doi.org/XXX/XXX)
+
+![Logo](media/deepmreye_logo.png)
 
 # Experimental code to acquire training data for DeepMReye
 This is a collection of scripts that allows acquiring training data for DeepMReye.
