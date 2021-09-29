@@ -6,7 +6,7 @@ function [logs, settings] = deepMReye_calib(settings)
 % MN, September 2021
 
 % ------------------ Open ptb-window and initiate task ------------------ %
-PsychDebugWindowConfiguration % make ptb screen transparent for debugging
+% PsychDebugWindowConfiguration % make ptb screen transparent for debugging
 [logs, oldRes] = openPTBwindow(settings);
 
 % Initialize eye tracker
@@ -30,7 +30,7 @@ logs = wait4Trigger(logs, settings, theStr);
 % -------------  Condition 1: Fixation (pseudorandom walk)  ------------- %
 
 % draw task instructions
-theStr  = 'Next up: Fixation task - always fixate at the black cross';
+theStr  = 'Fixation task - always fixate at the black cross';
 logs{1}.passedTrials = 1;
 [logs, settings] = draw_text(settings, logs, 1, 4, theStr);
 
@@ -52,7 +52,7 @@ logs{1}.passedTrials = logs{1}.passedTrials + currTrial;
 % -----------  Condition 2: Smooth Pursuit (pseudorandom walk) ---------- %
 
 % draw task instructions
-theStr  = 'Next up: smooth pursuit task - always fixate at the moving black cross';
+theStr  = 'Smooth-pursuit task - always fixate at the moving black cross';
 [logs, settings] = draw_text(settings, logs, 1, 4, theStr);
 
 % go!
@@ -64,7 +64,7 @@ while currTrial<=numel(settings.pursuit.xy_trials_pursuit)-1 && logs{1}.userQuit
     if settings.eyeTracking == 1; Eyelink('Message',sprintf('Tr%d', currTrial)); end
     
     % show pursuit sequence
-    frames = cFrame+1:cFrame+settings.fixtask.dur*settings.scr.hz;
+    frames = cFrame+1:cFrame+settings.pursuit.dur*settings.scr.hz;
     [logs, cFrame] = playGuidedViewing(logs, settings, currTrial, frames, 'pursuit');
 end
 logs{1}.passedTrials = logs{1}.passedTrials + currTrial;
@@ -73,7 +73,7 @@ logs{1}.passedTrials = logs{1}.passedTrials + currTrial;
 % -----------------  Condition 3: Free image viewing  ------------------- %
 
 % draw task instructions
-theStr  = 'Next up: free viewing task - explore the following images however you like';
+theStr  = 'Free viewing task - explore the following images however you like';
 [logs, settings] = draw_text(settings, logs, 1, 4, theStr); % draw task instructions
 
 % go!
@@ -131,6 +131,7 @@ if ~logs{1}.userQuit % if experiment ended normally
     plot(logs{1}.allFlips,logs{1}.allXYs(:,1)); % X coordinates over time
     plot(logs{1}.allFlips,logs{1}.allXYs(:,2)); % Y coordinates over time
     xlabel('frames'); ylabel('position (X & Y)'); title('target position over time');
+    legend({'X', 'Y'})
     arrayfun(@(x) vline(logs{1}.tTriggers(x)), 1:numel(logs{1}.tTriggers), 'uni', 0);
     hold off
 end

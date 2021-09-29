@@ -14,7 +14,7 @@ try
  oldRes    =   Screen('Resolution', settings.scr.scrID, settings.scr.width, ...
      settings.scr.height,settings.scr.hz,[],[]);
 catch
-    warning('\n Your screen resolution was not changed - do it manually!')
+    warning('Your screen resolution was not changed - do it manually!')
     oldRes = [];
 end
 

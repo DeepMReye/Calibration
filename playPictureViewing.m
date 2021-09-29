@@ -15,11 +15,9 @@ for cFrame = frames
     
     % draw image
     total_n_Trial          =  currTrial+logs{1}.passedTrials;
-    
-    
     picSz                  = round(settings.scr.height/3);
     [center(1), center(2)] = RectCenter(logs{1}.winRect);
-    picCoords              = [center(1)-picSz center(2)-picSz, center(1)+picSz center(2)+picSz]
+    picCoords              = [center(1)-picSz center(2)-picSz, center(1)+picSz center(2)+picSz];
     Screen('DrawTexture', logs{1}.w, settings.pics.id(currTrial), [],picCoords);
     
     % finish drawing and flip to screen

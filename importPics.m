@@ -3,7 +3,7 @@ function settings = importPics(settings, logs)
 % MN, September 2021
 
 % select random images
-path2pics = dir(settings.picTask.path2pics); path2pics = path2pics(3:end);
+path2pics = dir(fullfile(settings.picTask.path2pics, 'image*'));
 path2pics = fullfile(path2pics(1).folder, {path2pics(:).name}');
 tmp  = unique(randi(numel(path2pics), 1, 100)); tmp = tmp(randperm(numel(tmp))); 
 path2pics = path2pics(tmp(1:settings.picTask.n_pics));
