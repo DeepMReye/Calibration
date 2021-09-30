@@ -29,7 +29,7 @@ The experiment comprises 3 conditions presented in the following order.
 2) Smooth pursuit: The fixation cross will move smoothly at various speeds on a random-walk trajectory with defined directional sampling.
 3) Free viewing of images (recommended only if camera-based eye tracking is available).
 
-The video below shows a shortened example of how the experiment looks. It may look slightly different for you depending on your display settings.
+The video below shows a shortened version of the experiment. It may look slightly different for you depending on your display settings.
 
 ![deepMReye video](media/ptb_stimulus.gif)
 
