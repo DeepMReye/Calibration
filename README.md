@@ -31,7 +31,7 @@ The experiment comprises 3 conditions presented in the following order.
 
 The video below shows a shortened example of how the experiment looks. It may look slightly different for you depending on your display settings.
 
-<img src="media/ptb_stimulus.gif" width="600" height="379">
+![deepMReye video](media/ptb_stimulus.gif)
 
 At the top of the hierarchy is the script "Start_deepMReye_calib.m". It contains the screen settings (e.g. resolution, display size etc.) as well the task settings (e.g. how many fixation locations should be tested, how many images would you like to show etc.). These settings are then forwarded to "deepMReye_calib.m", which does the main work.
 
