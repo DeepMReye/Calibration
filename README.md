@@ -13,7 +13,7 @@ This is a collection of scripts that allows acquiring training data for DeepMRey
 ## How to use
 1) Install [MATLAB](https://matlab.mathworks.com) and [Psychtoolbox](http://psychtoolbox.org)
 2) Clone this repository
-```
+```bash
 git clone https://github.com/DeepMReye/Calibration.git
 cd Calibration
 ```
